@@ -12,5 +12,10 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3.3.1"
-  }
+  },
+  "version": "0.0.0",
+  "description": "Twitter clone, react,rails",
+  "main": "index.js",
+  "author": "GozaRuu <kais.sghari@gmail.com>",
+  "license": "MIT"
 }
