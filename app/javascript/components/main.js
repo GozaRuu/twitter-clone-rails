@@ -17,12 +17,12 @@ export class main extends Component {
 
   addTweet = (body) => {
     const data = this.state.tweets
-    this.setState({
+    this.setState(() => ({
       tweets: [
         ...data,
         { id: data[data.length - 1].id + 1, name: 'Jon Snow', body }
       ]
-    })
+    }))
   }
 
   render() {
