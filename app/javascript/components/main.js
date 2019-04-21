@@ -16,11 +16,10 @@ export class main extends Component {
   }
 
   addTweet = (body) => {
-    const data = this.state.tweets
     this.setState(() => ({
       tweets: [
-        ...data,
-        { id: data[data.length - 1].id + 1, name: 'Jon Snow', body }
+        ...this.state.tweets,
+        { id: Date.now(), name: 'Jon Snow', body }
       ]
     }))
   }
