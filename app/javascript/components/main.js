@@ -2,26 +2,23 @@ import React, { Component } from 'react'
 import TweetBox from './TweetBox'
 import TweetList from './TweetList'
 
-const mockTweets = [
-  { id: 0, name: 'Ned Stark', body: 'My #ForthTweet' },
-  { id: 1, name: 'Jon Snow', body: 'My #FirstTweet' },
-  { id: 2, name: 'Yoda', body: 'My #SecondTweet' },
-  { id: 3, name: 'Luke Skywalker', body: 'My #ThirdTweet' }
-]
-
 export class main extends Component {
   constructor(props) {
     super(props)
-    this.state = { tweets: mockTweets }
+    this.state = { tweets: [] }
   }
 
-  addTweet = (body) => {
+  addTweet = body => {
     this.setState(() => ({
-      tweets: [
-        ...this.state.tweets,
-        { id: Date.now(), name: 'Jon Snow', body }
-      ]
+      tweets: [...this.state.tweets, { id: Date.now(), name: 'Jon Snow', body }]
     }))
+  }
+
+  componentDidMount() {
+    fetch('/tweets')
+      .then(response => response.json())
+      .then(tweets => this.setState({tweets}))
+      .catch(e => console.log(e))
   }
 
   render() {
