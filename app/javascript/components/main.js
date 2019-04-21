@@ -10,11 +10,26 @@ const mockTweets = [
 ]
 
 export class main extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { tweets: mockTweets }
+  }
+
+  addTweet = (body) => {
+    const data = this.state.tweets
+    this.setState({
+      tweets: [
+        ...data,
+        { id: data[data.length - 1].id + 1, name: 'Jon Snow', body }
+      ]
+    })
+  }
+
   render() {
     return (
       <div className="container">
-        <TweetBox />
-        <TweetList tweets={mockTweets} />
+        <TweetBox addTweet={this.addTweet} />
+        <TweetList tweets={this.state.tweets} />
       </div>
     )
   }
