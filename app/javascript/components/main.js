@@ -3,10 +3,10 @@ import TweetBox from './TweetBox'
 import TweetList from './TweetList'
 
 const mockTweets = [
-  { name: 'Jon Snow', body: 'My #FirstTweet' },
-  { name: 'Yoda', body: 'My #SecondTweet' },
-  { name: 'Luke Skywalker', body: 'My #ThirdTweet' },
-  { name: 'Ned Stark', body: 'My #ForthTweet' }
+  { id: 0, name: 'Ned Stark', body: 'My #ForthTweet' },
+  { id: 1, name: 'Jon Snow', body: 'My #FirstTweet' },
+  { id: 2, name: 'Yoda', body: 'My #SecondTweet' },
+  { id: 3, name: 'Luke Skywalker', body: 'My #ThirdTweet' }
 ]
 
 export class main extends Component {
@@ -14,7 +14,7 @@ export class main extends Component {
     return (
       <div className="container">
         <TweetBox />
-        <TweetList tweets={mockTweets}/>
+        <TweetList tweets={mockTweets} />
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function TweetListItem({name, body}) {
+export default function TweetListItem({ name, body }) {
   return (
     <React.Fragment>
       <li className="collection-item avatar">

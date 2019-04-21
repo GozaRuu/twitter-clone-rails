@@ -6,8 +6,8 @@ export class TweetList extends Component {
     return (
       <div>
         <ul className="collection">
-          {this.props.tweets.map((tweet, index) => (
-            <TweetListItem key={index} {...tweet} />
+          {this.props.tweets.map(tweet => (
+            <TweetListItem key={tweet.id} {...tweet} />
           ))}
         </ul>
       </div>
