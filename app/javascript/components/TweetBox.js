@@ -6,7 +6,7 @@ class TweetBox extends Component {
       <div className="row">
         <form>
           <div className="input-field">
-            <textarea className="materialize-textarea"/>
+            <textarea className="materialize-textarea" />
             <label>what up</label>
             <button className="btn right">Tweet</button>
           </div>
