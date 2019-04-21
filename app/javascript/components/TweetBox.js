@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class TweetBox extends Component {
   render() {
     return (
-      <div>
+      <div className="row">
         <form>
           <div className="input-field">
             <textarea className="materialize-textarea"/>
