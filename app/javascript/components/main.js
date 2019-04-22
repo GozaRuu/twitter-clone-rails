@@ -9,15 +9,27 @@ export class main extends Component {
   }
 
   addTweet = body => {
-    this.setState(() => ({
-      tweets: [...this.state.tweets, { id: Date.now(), name: 'Jon Snow', body }]
-    }))
+    fetch('/tweets', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+    body: JSON.stringify({tweet: body})
+    })
+      .then(response => response.json())
+      .then(newTweet => {
+        this.setState(() => ({
+          tweets: [...this.state.tweets, newTweet]
+        }))
+      })
+      .catch(e => console.log(e))
   }
 
   componentDidMount() {
     fetch('/tweets')
       .then(response => response.json())
-      .then(tweets => this.setState({tweets}))
+      .then(tweets => this.setState({ tweets }))
       .catch(e => console.log(e))
   }
 

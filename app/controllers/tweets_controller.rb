@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
     def index
         render json: Tweet.includes(:user).all
